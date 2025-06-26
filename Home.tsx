@@ -45,7 +45,7 @@ import TypingEffect from './components/TypingEffect'; // Import TypingEffect
 import ParticleEffect from './components/ParticleEffect'; // Import ParticleEffect
 
 const MODEL_NAME = 'gemini-2.5-flash-preview-04-17';
-const ai = new GoogleGenAI({apiKey: process.env.API_KEY});
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
 
 interface Note {
   id: string;
