@@ -6,8 +6,8 @@ export default defineConfig(({ mode }) => {
   return {
     base: '/noteapp/', // <-- this is the fix (use your actual repo name here)
     define: {
-      'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-      'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
+      'process.env.API_KEY': JSON.stringify(AIzaSyBLg2rsiggYYZ1A1BLCRneHlRdkI8iWPkY),
+      'process.env.GEMINI_API_KEY': JSON.stringify(AIzaSyBLg2rsiggYYZ1A1BLCRneHlRdkI8iWPkY)
     },
     resolve: {
       alias: {
