@@ -2,17 +2,19 @@ import path from 'path';
 import { defineConfig, loadEnv } from 'vite';
 
 export default defineConfig(({ mode }) => {
+  // Loads environment variables based on mode (e.g., production, development)
   const env = loadEnv(mode, '.', '');
+
   return {
-    base: '/noteapp/', // <-- this is the fix (use your actual repo name here) deploy
-    define: {
-      'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-      'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
-    },
+    base: '/noteapp/', // Replace with your actual repo name if different
+
+    // No need to manually inject env vars via define.
+    // Vite automatically exposes variables prefixed with VITE_ via import.meta.env
+
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
-      }
-    }
+      },
+    },
   };
 });
